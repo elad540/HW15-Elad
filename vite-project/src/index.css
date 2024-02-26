@@ -1,0 +1,41 @@
+.header2 {    
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.logo {
+    padding: 10px;
+    text-align: right;
+    color: white;
+    background-color: black;
+}
+
+.rights {
+    padding: 10px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+/* Dashboard.css */
+
+.students-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.students-table th, .students-table td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.students-table th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.students-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
