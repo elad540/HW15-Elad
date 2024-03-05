@@ -1,0 +1,19 @@
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+
+.logo {
+    margin-right: auto;
+    color: white;
+    background-color: black;
+}
+
+.header2 {
+    color: black;
+}

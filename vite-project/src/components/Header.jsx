@@ -1,4 +1,3 @@
-import '..//index.css'
 
 function HeaderLogo(){
     return (
