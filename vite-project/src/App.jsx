@@ -6,20 +6,20 @@ import StudentsTable from "./components/Dashboard";
 import AddStudent from "./components/AddStudent";
 
 function App() {
-  const [students, setStudents] = useState(studentsData)
+  const [students, setStudents] = useState(studentsData);
 
   const handleAddStudent = (newStudent) => {
     setStudents((prevStudents) => [...prevStudents, { id: prevStudents.length + 1, ...newStudent }]);
-  }
+  };
 
   return (
     <>
       <HeaderLogo />
       <AddStudent onAddStudent={handleAddStudent} />
-      <StudentsTable students={students} />
+      <StudentsTable students={students} onStudentDelete={setStudents} />
       <Rights />
     </>
-  )
+  );
 }
 
 export default App;

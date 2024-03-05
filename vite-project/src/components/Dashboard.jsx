@@ -1,11 +1,8 @@
-import { useState } from 'react';
-import studentsData from "../data/students";
+import React from 'react';
+import '..//index.css';
 
-
-function StudentsTable() {
-    const [students, setStudents] = useState(studentsData);
-
-    const Student = ({ student, onDelete }) => (
+function StudentsTable({ students, onStudentDelete }) {
+    const Student = ({ student }) => (
         <tr>
             <td>{student.name}</td>
             <td>{student.age}</td>
@@ -13,15 +10,15 @@ function StudentsTable() {
             <td>{student.university}</td>
             <td>{student.averageGrade}</td>
             <td className="action">
-                <button onClick={() => onDelete(student.id)}>Delete</button>
+                <button onClick={() => handleDeleteStudent(student.id)}>Delete</button>
             </td>
         </tr>
-    )
+    );
 
     const handleDeleteStudent = (studentId) => {
         const updatedStudents = students.filter(student => student.id !== studentId);
         
-        setStudents(updatedStudents);
+        onStudentDelete(updatedStudents);
 
         console.log(`Deleted student with ID: ${studentId}`);
     }
@@ -41,12 +38,12 @@ function StudentsTable() {
                 </thead>
                 <tbody>
                     {students.map((student, index) => (
-                        <Student key={student.id} student={student} onDelete={handleDeleteStudent} />
+                        <Student key={student.id} student={student} />
                     ))}
                 </tbody>
             </table>
         </div>
-    )
+    );
 }
 
 export default StudentsTable;
