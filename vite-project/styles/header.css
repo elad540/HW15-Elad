@@ -1,6 +1,5 @@
 
 .header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -9,11 +8,16 @@
 }
 
 .logo {
-    margin-right: auto;
+    
+    padding: 10px;
+    text-align: left;
     color: white;
     background-color: black;
 }
 
-.header2 {
+.header2 {    
+    justify-content: space-between;
+    text-align: center;
+    background-color: white;
     color: black;
 }

@@ -35,9 +35,10 @@ const AddStudent = ({ onAddStudent }) => {
     };
 
     return (
-        <div>
-            <h2>Add Student</h2>
-            <form onSubmit={handleAddStudent}>
+        <div className='formContainer'>
+            <br></br>
+            <h2 className='h2Add'>Add Student</h2>
+            <form className='AddStudentForm' onSubmit={handleAddStudent}>
                 <label> Name:</label>
                 <input type="text" name="name" value={newStudent.name} onChange={handleChange} required />
 
@@ -50,10 +51,11 @@ const AddStudent = ({ onAddStudent }) => {
                 <label> University:</label>
                 <input type="text" name="university" value={newStudent.university} onChange={handleChange} required />
 
-                <label> Average Grade:</label>
+                <label> Grade:</label>
                 <input type="number" name="averageGrade" value={newStudent.averageGrade} onChange={handleChange} required />
+                <br></br>
 
-                <button type="submit"> Add Student </button>
+                <button className='Addbtn' type="submit"> Add Student </button>
             </form>
             <br />
         </div>

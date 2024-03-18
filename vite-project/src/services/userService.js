@@ -30,4 +30,8 @@ function logout() {
   storageService.clearAll()
 }
 
+function handleEditUser() {
+  
+}
+
 export const userService = { createUser, login, logout }

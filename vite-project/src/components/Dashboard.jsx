@@ -1,5 +1,5 @@
 import React from 'react';
-import '..//index.css';
+
 
 function StudentsTable({ students, onStudentDelete }) {
     const Student = ({ student }) => (

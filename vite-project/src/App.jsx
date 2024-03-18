@@ -8,11 +8,14 @@ import Login from "./components/LoginForm";
 import Register from "./components/RegisterForm";
 import { userService } from "./services/userService.js";
 import { storageService } from "./services/storageService.js";
+import Admin from './components/Admin.jsx';
+
 
 function App() {
   const [students, setStudents] = useState(studentsData);
   const [loggedInUser, setLoggedInUser] = useState(null);
   const [showRegister, setShowRegister] = useState(false);
+  const [showAdmin, setShowAdmin] = useState(false); // State to manage admin view
 
   useEffect(() => {
     const loggedInUser = storageService.getLoggedInUser();
@@ -20,6 +23,7 @@ function App() {
 
     if (loggedInUser) {
       setLoggedInUser(loggedInUser);
+      setShowAdmin(loggedInUser.isAdmin); // Check if the logged-in user is an admin
     }
   }, []);
 
@@ -37,12 +41,14 @@ function App() {
         return;
       }
       setLoggedInUser(user);
+      setShowAdmin(user.isAdmin); // Check if the logged-in user is an admin
     }
   };
 
   const handleLogout = () => {
     userService.logout();
     setLoggedInUser(null);
+    setShowAdmin(false); // Reset admin view on logout
   };
 
   const handleAddStudent = (newStudent) => {
@@ -60,8 +66,9 @@ function App() {
         )
       ) : (
         <>
-          <AddStudent onAddStudent={handleAddStudent} />
           <StudentsTable students={students} onStudentDelete={setStudents} />
+          <AddStudent onAddStudent={handleAddStudent} />
+          {showAdmin && <Admin />} 
         </>
       )}
       <Rights />

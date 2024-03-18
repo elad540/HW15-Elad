@@ -1,26 +1,26 @@
-.header2 {    
+/* .header2 {    
     justify-content: space-between;
     text-align: center;
     background-color: white;
     color: black;
-}
+} */
 
-.logo {
+/* .logo {
     padding: 10px;
     text-align: right;
     color: white;
     background-color: black;
-}
+} */
 
-.rights {
+/* .rights {
     padding: 10px;
     color: white;
     background-color: black;
     text-align: center;
-}
+} */
 /* Dashboard.css */
 
-.students-table {
+/* .students-table {
     border-collapse: collapse;
     width: 100%;
 }
@@ -38,4 +38,4 @@
 
 .students-table tr:nth-child(even) {
     background-color: #f2f2f2;
-}
+} */
